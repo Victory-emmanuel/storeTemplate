@@ -111,6 +111,7 @@ export default function CheckoutForm() {
           </div>
         </div>
       </form>
+      <div className="mt-6"></div>
       <Link to="/">
         <Button color="accent">Continue Shopping</Button>
       </Link>

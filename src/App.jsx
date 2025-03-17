@@ -10,10 +10,13 @@ import Checkout from "./pages/Checkout";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentFailed from "./pages/PaymentFailed";
 import OrderSuccess from "./pages/OrderSuccess";
+import Navigation from "./components/Universal/Navigation";
 
 function App() {
   return (
     <BrowserRouter>
+      <Navigation />
+
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<HomePage />} />

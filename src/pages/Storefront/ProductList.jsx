@@ -10,7 +10,6 @@ import {
 } from "@material-tailwind/react";
 import ProductCard from "../../components/ProductCard";
 import ErrorBoundaryWrapper from "../../components/ErrorBoundary";
-import CartIcon from "../../components/CartIcon";
 import Hero from "../../components/Hero";
 
 export default function ProductList() {
@@ -48,8 +47,7 @@ export default function ProductList() {
   if (loading) return <Spinner className="h-12 w-12" />;
 
   return (
-    <div className=" mx-auto py-8">
-      <CartIcon />
+    <div className=" mx-auto pb-16">
       <Hero />
       {/* Filter Controls */}
       <div className="flex flex-wrap gap-4 mb-8  px-12">
@@ -75,7 +73,7 @@ export default function ProductList() {
           onChange={(value) => setPriceRange(JSON.parse(value))}
         >
           <Option value="[0,500000]">All prices</Option>
-          <Option value="[0,5000]">₦0 - ₦10,000</Option>
+          <Option value="[0,5000]">₦0 - ₦5,000</Option>
           <Option value="[5000,10000]">₦5,000 - ₦10,000</Option>
           <Option value="[10000,20000]">₦10,000 - ₦20,000</Option>
           <Option value="[20000,50000]">₦20,000 - ₦50,000</Option>
@@ -97,7 +95,7 @@ export default function ProductList() {
       {/* Product Grid */}
 
       <ErrorBoundaryWrapper>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6  px-12">
+        <div className="grid grid-cols-1 ss:grid-cols-2  md:grid-cols-3 lg:grid-cols-4  gap-6 px-6  ss:px-12">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

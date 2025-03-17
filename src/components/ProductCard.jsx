@@ -68,12 +68,7 @@ export default function ProductCard({ product }) {
       transition={{ duration: 0.3 }}
       className="h-full"
     >
-      <Card
-        className={`h-full overflow-hidden ${
-          isDarkMode ? "bg-gray-800 text-gray-100" : "bg-white"
-        }`}
-        style={{ borderRadius: "24px" }}
-      >
+      <Card className="h-full overflow-hidden bg-white shadow-xl dark:bg-black text-secondary/80 dark:text-primary ">
         {/* Product Image */}
         <CardHeader
           floated={false}
@@ -90,25 +85,14 @@ export default function ProductCard({ product }) {
         </CardHeader>
 
         {/* Product Info */}
-        <CardBody
-          className={`px-5 pt-6 pb-3 ${
-            isDarkMode ? "bg-amber-800/90" : "bg-amber-100"
-          }`}
-        >
-          <Typography
-            variant="small"
-            className={`mb-1 ${
-              isDarkMode ? "text-amber-200/80" : "text-amber-800/80"
-            }`}
-          >
+        <CardBody className="px-5 pt-6 pb-3 bg-primary text-secondary/80 dark:bg-black dark:text-primary/80 ">
+          <Typography variant="small" className="mb-1 text-accent">
             Product
           </Typography>
 
           <Typography
             variant="h3"
-            className={`font-bold font-PlayfairDisplay ${
-              isDarkMode ? "text-white" : "text-black"
-            }`}
+            className="font-bold text-xl sm:text-2xl text-black dark:text-white"
           >
             {product.name}
           </Typography>
@@ -116,9 +100,7 @@ export default function ProductCard({ product }) {
           <div className="flex items-center justify-between mt-2">
             <Typography
               variant="h4"
-              className={`font-bold ${
-                isDarkMode ? "text-amber-200" : "text-amber-600"
-              }`}
+              className="font-bold  text-seconadary/90 dark:text-primary/90"
             >
               {formatPrice(product.price)}
             </Typography>
@@ -129,17 +111,13 @@ export default function ProductCard({ product }) {
             <div className="flex items-center">
               <Typography
                 variant="small"
-                className={`${
-                  isDarkMode ? "text-amber-200/70" : "text-amber-800/70"
-                }`}
+                className="text-seconary/60 dark:text-primary/60 font-medium"
               >
                 Flavor
               </Typography>
               <Typography
-                variant="small"
-                className={`ml-2 font-medium ${
-                  isDarkMode ? "text-white" : "text-black"
-                }`}
+                variant="medium"
+                className="ml-2 font-medium text-secondary/80 dark:text-primary/80"
               >
                 {product.flavor}
               </Typography>
@@ -149,9 +127,7 @@ export default function ProductCard({ product }) {
               <div className="flex items-center">
                 <Typography
                   variant="small"
-                  className={`${
-                    isDarkMode ? "text-amber-200/70" : "text-amber-800/70"
-                  }`}
+                  className="text-accent/60 font-medium"
                 >
                   Status
                 </Typography>
@@ -166,19 +142,15 @@ export default function ProductCard({ product }) {
           </div>
         </CardBody>
 
-        <CardFooter
-          className={`flex items-center justify-between pt-0 pb-5 px-5 ${
-            isDarkMode ? "bg-amber-800/90" : "bg-amber-100"
-          }`}
-        >
+        <CardFooter className="flex items-center justify-between pt-0 pb-5 px-5 bg-primary text-secondary/80 dark:bg-black dark:text-primary">
           <IconButton
             variant="text"
             size="lg"
             className={`rounded-xl p-3 ${
-              isDarkMode ? "bg-amber-700/50" : "bg-white"
+              isDarkMode ? "bg-accent/50" : "bg-white"
             } ${
               isFavorite
-                ? "text-red-500"
+                ? "text-accent"
                 : isDarkMode
                 ? "text-white"
                 : "text-gray-700"
@@ -194,11 +166,7 @@ export default function ProductCard({ product }) {
 
           <Button
             size="lg"
-            className={`flex items-center justify-between gap-3 rounded-xl px-6 ${
-              isDarkMode
-                ? "bg-amber-600 text-white"
-                : "bg-amber-200 text-amber-900"
-            }`}
+            className="flex items-center justify-between gap-3 rounded-xl px-6 hover:bg-accent/70 hover:shadow-md hover:shadow-accent/40 transition-all duration-300 bg-accent text-white"
             onClick={handleAddToCart}
           >
             <span className="font-medium">Add to Cart</span>

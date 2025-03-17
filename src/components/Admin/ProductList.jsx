@@ -9,7 +9,6 @@ import {
   IconButton,
   Chip,
   Tooltip,
-  Switch,
 } from "@material-tailwind/react";
 import {
   PencilIcon,
