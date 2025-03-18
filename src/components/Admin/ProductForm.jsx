@@ -142,7 +142,7 @@ export default function ProductForm({ product, onClear }) {
     >
       <Card
         className={`w-full max-w-4xl mx-auto shadow-lg ${
-          isDarkMode ? "bg-gray-800 text-gray-100" : "bg-white"
+          isDarkMode ? "bg-black/80 text-gray-100" : "bg-white"
         }`}
       >
         <CardHeader

@@ -33,8 +33,12 @@ export default function CartIcon() {
         </Button>
       </Badge>
 
-      <Dialog open={cartVisible} handler={() => setCartVisible(false)}>
-        <div className="p-4">
+      <Dialog
+        className=" bg-white dark:bg-black rounded-xl shadow-xl "
+        open={cartVisible}
+        handler={() => setCartVisible(false)}
+      >
+        <div className="p-4 bg-white dark:bg-black rounded-xl shadow-xl">
           <div className="flex justify-between items-center mb-4">
             <Typography variant="h5">Your Cart</Typography>
             <XMarkIcon
@@ -44,12 +48,12 @@ export default function CartIcon() {
           </div>
 
           {cart.length === 0 ? (
-            <Typography className="text-center py-4">
+            <Typography className="text-center text-secondary dark:text-primary py-4">
               Your cart is empty
             </Typography>
           ) : (
             <>
-              <div className="space-y-4 max-h-96 overflow-y-auto">
+              <div className="space-y-4 max-h-96 overflow-y-auto ">
                 {cart.map((item) => (
                   <div key={item.id} className="flex items-center gap-4">
                     <img
@@ -78,7 +82,7 @@ export default function CartIcon() {
                   </Typography>
                 </div>
                 <Link to="/cart" onClick={() => setCartVisible(false)}>
-                  <Button color="accent" fullWidth>
+                  <Button className="bg-accent" fullWidth>
                     View Cart & Checkout
                   </Button>
                 </Link>
