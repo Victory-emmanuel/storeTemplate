@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 //src\components\ProductCard.jsx
 import { useState, useEffect } from "react";
-import { formatPrice } from "../utils/formatter";
+import { formatPrice } from "../../utils/formatter";
 import { motion } from "framer-motion";
 import {
   Card,
@@ -14,7 +14,7 @@ import {
 } from "@material-tailwind/react";
 import { HeartIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import { HeartIcon as HeartIconSolid } from "@heroicons/react/24/solid";
-import { useCart } from "../contexts/CartContext.jsx";
+import { useCart } from "../../contexts/CartContext.jsx";
 
 export default function ProductCard({ product }) {
   const { addToCart, setCartVisible } = useCart();

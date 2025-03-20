@@ -9,7 +9,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
-import CartIcon from "../CartIcon";
+import CartIcon from "./CartIcon";
 
 const NavLinks = [
   { name: "Home", path: "/" },

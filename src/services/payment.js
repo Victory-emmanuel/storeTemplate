@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-async-promise-executor */
+// services/payment.js
 import { useFlutterwave } from "flutterwave-react-v3";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase/config";
-
 export const useFlutterwavePayment = () => {
   const createOrder = async (paymentResponse, items, customer) => {
     try {
@@ -14,15 +14,13 @@ export const useFlutterwavePayment = () => {
         items: items.map((item) => ({
           productId: item.id,
           name: item.name,
-          price: item.price, // Should be in kobo
+          price: item.price,
           quantity: item.quantity,
         })),
-        total: paymentResponse.amount, // Should be in kobo
+        total: paymentResponse.amount,
         status: "pending",
         createdAt: serverTimestamp(),
       };
-
-      console.log("Creating order:", orderData); // Debug log
       await addDoc(collection(db, "orders"), orderData);
     } catch (error) {
       console.error("Order creation failed:", error);
@@ -45,7 +43,7 @@ export const useFlutterwavePayment = () => {
       customizations: {
         title: "Your Store Name",
         description: "Secure Payment",
-        logo: "https://your-store-logo.png", // Replace with your logo URL
+        logo: "https://your-store-logo.png",
       },
     };
 
@@ -56,12 +54,11 @@ export const useFlutterwavePayment = () => {
         flutterwave({
           callback: async (response) => {
             try {
-              const orderCreated = await createOrder(
-                response,
-                cartItems,
-                customer
-              );
-              if (response.status === "successful" && orderCreated) {
+              // Create the order in Firestore
+              await createOrder(response, cartItems, customer);
+
+              // Check the Flutterwave response status only
+              if (response.status === "successful") {
                 clearCart();
                 resolve(response);
               } else {

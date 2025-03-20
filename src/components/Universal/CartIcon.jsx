@@ -1,7 +1,7 @@
 // src/components/CartIcon.jsx
-import { useCart } from "../contexts/CartContext.jsx";
+import { useCart } from "../../contexts/CartContext.jsx";
 import { Badge, Button, Dialog, Typography } from "@material-tailwind/react";
-import { formatPrice } from "../utils/formatter";
+import { formatPrice } from "../../utils/formatter";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 

@@ -8,9 +8,10 @@ import {
   Spinner,
   Button,
 } from "@material-tailwind/react";
-import ProductCard from "../../components/ProductCard";
-import ErrorBoundaryWrapper from "../../components/ErrorBoundary";
-import Hero from "../../components/Hero";
+
+import ErrorBoundaryWrapper from "../../components/Universal/ErrorBoundary";
+import Hero from "../../components/StoreFront/Hero";
+import ProductCard from "../../components/Universal/ProductCard";
 
 export default function ProductList() {
   const { products, loading } = useProducts();
