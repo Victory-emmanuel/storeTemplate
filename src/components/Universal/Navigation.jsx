@@ -12,9 +12,9 @@ import { Link } from "react-router-dom";
 import CartIcon from "./CartIcon";
 
 const NavLinks = [
-  { name: "Home", path: "/" },
-  { name: "Shop", path: "/shop" },
-  { name: "About", path: "/about" },
+  // { name: "Home", path: "/" },
+  // { name: "Shop", path: "/shop" },
+  // { name: "About", path: "/about" },
 ];
 
 export default function Navigation() {
